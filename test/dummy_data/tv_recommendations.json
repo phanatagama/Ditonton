@@ -1,0 +1,29 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/eyi5tMbK6fRtXNFffUTIhRiX0LT.jpg",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "id": 2359,
+      "media_type": "tv",
+      "name": "Spin City",
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Spin City",
+      "overview": "Workaholic Mike Flaherty is the Deputy Mayor of New York City, serving as Mayor Randall Winston's key strategist and much-needed handler. Mike runs the city with the help of his oddball staff: an anxious and insecure press secretary; a sexist, boorish chief of staff; an impeccably groomed gay activist running minority affairs; a sharp and efficient, man-crazy accountant; and an idealistic young speechwriter. Like Mike, they are all professionally capable but personally challenged.",
+      "popularity": 23.679,
+      "poster_path": "/iuBzOwnUNyce4KVnCDXphFOzv6i.jpg",
+      "first_air_date": "1996-09-17",
+      "vote_average": 7.117,
+      "vote_count": 205
+    }
+  ],
+  "total_pages": 2,
+  "total_results": 23
+}
