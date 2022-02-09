@@ -3,7 +3,6 @@ import 'package:core/domain/entities/tv/tv.dart';
 import 'package:core/domain/usecases/tv/get_popular_tv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-
 import '../../../helpers/test_helper.mocks.dart';
 
 void main() {

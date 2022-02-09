@@ -4,6 +4,7 @@ import 'package:core/utils/state_enum.dart';
 import 'package:core/presentation/provider/search_notifier.dart';
 import 'package:core/presentation/widgets/card_list.dart';
 import 'package:flutter/material.dart';
+import 'package:movies/presentation/widgets/movie_card_list.dart';
 import 'package:provider/provider.dart';
 
 class SearchPage extends StatelessWidget {
