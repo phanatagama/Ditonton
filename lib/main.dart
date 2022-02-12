@@ -1,17 +1,10 @@
 import 'package:about/about.dart';
 import 'package:core/core.dart';
-import 'package:core/presentation/pages/popular_tv_page.dart';
+
 import 'package:core/presentation/pages/search_page.dart';
-import 'package:core/presentation/pages/top_rated_tv_page.dart';
-import 'package:core/presentation/pages/tv_detail_page.dart';
-import 'package:core/presentation/pages/watchlist_tv_page.dart';
-import 'package:core/presentation/provider/popular_tv_notifier.dart';
 import 'package:core/presentation/provider/search_notifier.dart';
-import 'package:core/presentation/provider/top_rated_tv_notifier.dart';
-import 'package:core/presentation/provider/tv_detail_notifier.dart';
-import 'package:core/presentation/provider/tv_list_notifier.dart';
 import 'package:movies/movies.dart';
-import 'package:core/presentation/provider/watchlist_tv_notifier.dart';
+import 'package:tv/tv.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

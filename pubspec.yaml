@@ -35,6 +35,8 @@ dependencies:
     path: core
   movies:
     path: movies
+  tv:
+    path: tv
 
 dev_dependencies:
   flutter_test:

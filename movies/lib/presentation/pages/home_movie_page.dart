@@ -3,7 +3,7 @@ import 'package:core/styles/text_styles.dart';
 import 'package:core/utils/constants.dart';
 import 'package:movies/presentation/provider/movie_list_notifier.dart';
 import '../../domain/entities/movie.dart';
-import 'package:core/presentation/pages/home_tv_page.dart';
+import 'package:tv/tv.dart';
 import 'package:core/utils/routes.dart';
 import 'package:core/utils/state_enum.dart';
 import 'package:flutter/cupertino.dart';

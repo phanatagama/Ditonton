@@ -2,10 +2,10 @@
 import 'package:core/styles/text_styles.dart';
 import 'package:core/utils/state_enum.dart';
 import 'package:core/presentation/provider/search_notifier.dart';
-import 'package:core/presentation/widgets/card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:movies/presentation/widgets/movie_card_list.dart';
 import 'package:provider/provider.dart';
+import 'package:tv/presentation/widgets/tv_card_list.dart';
 
 class SearchPage extends StatelessWidget {
 

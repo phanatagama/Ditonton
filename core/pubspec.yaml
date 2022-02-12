@@ -21,6 +21,8 @@ dependencies:
   path_provider: ^2.0.2
   movies:
     path: ../movies
+  tv:
+    path: ../tv
 
 dev_dependencies:
   flutter_test:

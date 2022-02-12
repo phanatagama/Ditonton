@@ -632,6 +632,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  tv:
+    dependency: "direct main"
+    description:
+      path: tv
+      relative: true
+    source: path
+    version: "0.0.1"
   typed_data:
     dependency: transitive
     description:
