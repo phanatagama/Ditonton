@@ -1,10 +1,9 @@
 
 import 'package:core/styles/text_styles.dart';
-import 'package:core/utils/state_enum.dart';
 import 'package:core/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:tv/presentation/provider/watchlist_tv_notifier.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tv/presentation/bloc/watchlist_tv/watchlist_tv_cubit.dart';
 import 'package:tv/presentation/widgets/tv_card_list.dart';
 
 class WatchlistTVSeriesPage extends StatefulWidget {
@@ -18,10 +17,7 @@ class _WatchlistTVSeriesPageState extends State<WatchlistTVSeriesPage>
   @override
   void initState() {
     super.initState();
-    Future.microtask(() {
-      Provider.of<WatchlistTVSeriesNotifier>(context, listen: false)
-          .fetchWatchlistTVSeries();
-    });
+    context.read<WatchlistTvSeriesCubit>().getWatchlistTvSeries();
   }
 
   @override
@@ -31,8 +27,7 @@ class _WatchlistTVSeriesPageState extends State<WatchlistTVSeriesPage>
   }
 
   void didPopNext() {
-    Provider.of<WatchlistTVSeriesNotifier>(context, listen: false)
-        .fetchWatchlistTVSeries();
+    context.read<WatchlistTvSeriesCubit>().getWatchlistTvSeries();
   }
 
   @override
@@ -43,31 +38,27 @@ class _WatchlistTVSeriesPageState extends State<WatchlistTVSeriesPage>
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<WatchlistTVSeriesNotifier>(
-          builder: (context, data, child) {
-            if (data.watchlistState == RequestState.Loading) {
-              return Center(
+        child: BlocBuilder<WatchlistTvSeriesCubit, WatchlistTvSeriesState>(
+          builder: (context, state) {
+            if (state is WatchlistTvSeriesLoading) {
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.watchlistState == RequestState.Loaded) {
-              if (data.watchlistTVSeries.isEmpty)
-                return Center(
-                  child: Text("Empty", style: kBodyText),
+            } else if (state is WatchlistTvSeriesHasData) {
+              if (state.result.isNotEmpty) {
+                return ListView.builder(
+                  itemBuilder: (context, index) {
+                    final tv = state.result[index];
+                    return TVSeriesCardList(tv);
+                  },
+                  itemCount: state.result.length,
                 );
-
-              return ListView.builder(
-                itemBuilder: (context, index) {
-                  final tvSeries = data.watchlistTVSeries[index];
-
-                  return TVSeriesCardList(tvSeries);
-                },
-                itemCount: data.watchlistTVSeries.length,
+              }
+              return Center(
+                child: Text('Empty', style: kBodyText),
               );
             } else {
-              return Center(
-                key: Key('error_message'),
-                child: Text(data.message),
-              );
+              return const Text('Failed');
             }
           },
         ),

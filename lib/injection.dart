@@ -1,7 +1,8 @@
 import 'package:core/data/datasources/db/database_helper.dart';
+import 'package:core/presentation/bloc/search_movie_bloc.dart';
+import 'package:core/presentation/bloc/search_tv_bloc.dart';
 
 import 'package:movies/movies.dart';
-import 'package:core/presentation/provider/search_notifier.dart';
 import 'package:tv/tv.dart';
 import 'package:movies/domain/usecases/remove_watchlist.dart' as rwm;
 import 'package:movies/domain/usecases/save_watchlist.dart' as swm;
@@ -15,72 +16,58 @@ final locator = GetIt.instance;
 void init() {
   // provider
   locator.registerFactory(
-    () => MovieListNotifier(
-      getNowPlayingMovies: locator(),
-      getPopularMovies: locator(),
-      getTopRatedMovies: locator(),
+    () => MovieDetailCubit(locator()
     ),
   );
   locator.registerFactory(
-    () => TVSeriesListNotifier(
-      getNowPlayingTVSeries: locator(),
-      getPopularTVSeries: locator(),
-      getTopRatedTVSeries: locator(),
+    () => TvSeriesDetailCubit(locator())
+  );
+  locator.registerFactory(
+    () => NowPlayingMoviesCubit(locator(),
     ),
   );
   locator.registerFactory(
-    () => MovieDetailNotifier(
-      getMovieDetail: locator(),
-      getMovieRecommendations: locator(),
-      getWatchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
+        () => MovieRecommendationsCubit(locator(),
     ),
   );
   locator.registerFactory(
-    () => TVSeriesDetailNotifier(
-      getTVDetail: locator(),
-      getTVRecommendations: locator(),
-      getWatchListStatusTV: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
+        () => TvSeriesDetailRecommendationsCubit(locator(),
     ),
   );
   locator.registerFactory(
-    () => SearchNotifier(
-      searchMovies: locator(),
-      searchTVSeries: locator(),
-    ),
+    () => NowPlayingTvSeriesCubit(locator())
   );
   locator.registerFactory(
-    () => PopularMoviesNotifier(
+    () => SearchMoviesBloc(locator()),
+  );
+  locator.registerFactory(
+        () => SearchTVSeriesBloc(locator()),
+  );
+  locator.registerFactory(
+    () => PopularMoviesCubit(
       locator(),
     ),
   );
   locator.registerFactory(
-    () => TopRatedMoviesNotifier(
-      getTopRatedMovies: locator(),
+    () => TopRatedMoviesCubit( locator(),
     ),
   );
   locator.registerFactory(
-    () => WatchlistMovieNotifier(
-      getWatchlistMovies: locator(),
+    () => WatchlistMoviesCubit(
+       locator(),locator(),locator(),locator()
     ),
   );
   locator.registerFactory(
-    () => PopularTVSeriesNotifier(
+    () => PopularTvSeriesCubit(
       locator(),
     ),
   );
   locator.registerFactory(
-    () => TopRatedTVSeriesNotifier(
-      getTopRatedTVSeries: locator(),
+    () => TopRatedTvSeriesCubit( locator(),
     ),
   );
   locator.registerFactory(
-    () => WatchlistTVSeriesNotifier(
-      getWatchlistTVSeries: locator(),
-    ),
+    () => WatchlistTvSeriesCubit(locator(),locator(),locator(),locator()),
   );
 
   // use case

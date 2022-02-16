@@ -1,14 +1,16 @@
 import 'package:about/about.dart';
 import 'package:core/core.dart';
+import 'package:core/presentation/bloc/search_movie_bloc.dart';
+import 'package:core/presentation/bloc/search_tv_bloc.dart';
 
 import 'package:core/presentation/pages/search_page.dart';
-import 'package:core/presentation/provider/search_notifier.dart';
+
 import 'package:movies/movies.dart';
 import 'package:tv/tv.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:ditonton/injection.dart' as di;
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   di.init();
@@ -18,40 +20,47 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
+    return MultiBlocProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieListNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<SearchMoviesBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieDetailNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<SearchTVSeriesBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<SearchNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<MovieDetailCubit>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TopRatedMoviesNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<MovieRecommendationsCubit>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<PopularMoviesNotifier>(),
+
+        BlocProvider(
+          create: (_) => di.locator<TopRatedMoviesCubit>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<WatchlistMovieNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<PopularMoviesCubit>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TVSeriesListNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<WatchlistMoviesCubit>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TVSeriesDetailNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<NowPlayingMoviesCubit>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TopRatedTVSeriesNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<TvSeriesDetailCubit>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<PopularTVSeriesNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<TvSeriesDetailRecommendationsCubit>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<WatchlistTVSeriesNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<TopRatedTvSeriesCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<PopularTvSeriesCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<WatchlistTvSeriesCubit>(),
         ),
       ],
       child: MaterialApp(
@@ -112,5 +121,96 @@ class MyApp extends StatelessWidget {
         },
       ),
     );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String _activeDrawerItem = "Movie";
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            const UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/circle-g.png'),
+              ),
+              accountName: Text('Phanatagama'),
+              accountEmail: Text('phanatagama@gmail.com'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.movie),
+              title: const Text('Movies'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() {
+                  _activeDrawerItem = "Movie";
+                });
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.tv),
+              title: const Text('TV Series'),
+              onTap: () {
+                Navigator.pop(context);
+                setState(() {
+                  _activeDrawerItem = "TVSeries";
+                });
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.save_alt),
+              title: const Text('Watchlist M'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, WATCHLIST_MOVIE_ROUTE);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.save_alt),
+              title: const Text('Watchlist TV'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, WATCHLIST_TV_ROUTE);
+              },
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, ABOUT_ROUTE);
+              },
+              leading: const Icon(Icons.info_outline),
+              title: const Text('About'),
+            ),
+          ],
+        ),
+      ),
+      appBar: AppBar(
+        title: const Text('Ditonton'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, SEARCH_ROUTE,
+                  arguments: _activeDrawerItem);
+            },
+            icon: const Icon(Icons.search),
+          )
+        ],
+      ),
+      body: _buildBody(context, _activeDrawerItem) ,
+    );
+  }
+  Widget _buildBody(BuildContext context, String selectedDrawerItem) {
+    if (selectedDrawerItem == "Movie") {
+      return HomeMoviePage();
+    } else if (selectedDrawerItem == "TVSeries") {
+      return HomeTVPage();
+    }
+    return Container();
   }
 }

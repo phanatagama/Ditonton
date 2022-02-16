@@ -1,21 +1,16 @@
 name: movies
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
-  cached_network_image: ^3.0.0
-  flutter_bloc: ^8.0.0
   flutter:
     sdk: flutter
   core:
     path: ../core
-  tv:
-    path: ../tv
 
 dev_dependencies:
   flutter_test:

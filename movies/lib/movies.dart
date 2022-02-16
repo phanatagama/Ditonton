@@ -37,11 +37,13 @@ export 'presentation/pages/home_movie_page.dart';
 export 'presentation/pages/popular_movies_page.dart';
 export 'presentation/pages/top_rated_movies_page.dart';
 export 'presentation/pages/watchlist_movies_page.dart';
-// presentation -> provider
-export 'presentation/provider/movie_detail_notifier.dart';
-export 'presentation/provider/movie_list_notifier.dart';
-export 'presentation/provider/popular_movies_notifier.dart';
-export 'presentation/provider/top_rated_movies_notifier.dart';
-export 'presentation/provider/watchlist_movie_notifier.dart';
+// presentation -> cubit
+export 'presentation/bloc/watchlist_movies/watchlist_movies_cubit.dart';
+// presentation -> cubit (movies)
+export 'presentation/bloc/now_playing_movies/now_playing_movies_cubit.dart';
+export 'presentation/bloc/popular_movies/popular_movies_cubit.dart';
+export 'presentation/bloc/top_rated_movies/top_rated_movies_cubit.dart';
+export 'presentation/bloc/movie_detail/movie_detail_cubit.dart';
+export 'presentation/bloc/movie_recommendation/movie_recommendation_cubit.dart';
 // presentation -> widgets
 export 'presentation/widgets/movie_card_list.dart';
