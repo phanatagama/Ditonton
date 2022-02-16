@@ -1,3 +1,4 @@
+import 'package:core/core.dart';
 import 'package:core/data/datasources/db/database_helper.dart';
 import 'package:core/presentation/bloc/search_movie_bloc.dart';
 import 'package:core/presentation/bloc/search_tv_bloc.dart';
@@ -8,7 +9,7 @@ import 'package:movies/domain/usecases/remove_watchlist.dart' as rwm;
 import 'package:movies/domain/usecases/save_watchlist.dart' as swm;
 import 'package:tv/domain/usecases/remove_watchlist.dart' as rwtv;
 import 'package:tv/domain/usecases/save_watchlist.dart' as swtv;
-import 'package:http/http.dart' as http;
+// import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
 final locator = GetIt.instance;
@@ -120,5 +121,8 @@ void init() {
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
 
   // external
-  locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton(() =>
+  SSLPinning.client
+      // http.Client()
+  );
 }

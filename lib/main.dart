@@ -4,6 +4,7 @@ import 'package:core/presentation/bloc/search_movie_bloc.dart';
 import 'package:core/presentation/bloc/search_tv_bloc.dart';
 
 import 'package:core/presentation/pages/search_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:movies/movies.dart';
 import 'package:tv/tv.dart';
@@ -12,7 +13,10 @@ import 'package:flutter/material.dart';
 import 'package:ditonton/injection.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await SSLPinning.init();
   di.init();
   runApp(MyApp());
 }
@@ -46,6 +50,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => di.locator<NowPlayingMoviesCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<NowPlayingTvSeriesCubit>(),
         ),
         BlocProvider(
           create: (_) => di.locator<TvSeriesDetailCubit>(),

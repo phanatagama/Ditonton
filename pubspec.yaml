@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_bloc: ^8.0.1
   get_it: ^7.1.3
+  firebase_core: ^1.12.0
+  firebase_crashlytics: ^2.5.1
   about:
     path: about
   core:

@@ -21,10 +21,10 @@ class _HomeTVPageState extends State<HomeTVPage> {
   void initState() {
     super.initState();
     Future.microtask(() {
-    context.read<NowPlayingTvSeriesCubit>().getNowPlayingTvSeries();
-    context.read<PopularTvSeriesCubit>().getPopularTvSeries();
-    context.read<TopRatedTvSeriesCubit>().getTopRatedTvSeries();
-  });
+      context.read<PopularTvSeriesCubit>().getPopularTvSeries();
+      context.read<TopRatedTvSeriesCubit>().getTopRatedTvSeries();
+      context.read<NowPlayingTvSeriesCubit>().getNowPlayingTvSeries();
+    });
   }
 
   @override
