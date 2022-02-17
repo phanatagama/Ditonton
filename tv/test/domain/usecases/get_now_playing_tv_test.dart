@@ -5,9 +5,6 @@ import 'package:tv/tv.dart';
 
 import '../../helpers/test_helper.mocks.dart';
 
-
-
-
 void main() {
   late GetNowPlayingTVSeries usecase;
   late MockTVSeriesRepository mockTVSeriesRepository;

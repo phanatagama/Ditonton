@@ -1,13 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:movies/presentation/bloc/popular_movies/popular_movies_cubit.dart';
 import 'package:movies/presentation/widgets/movie_card_list.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 class PopularMoviesPage extends StatefulWidget {
-
   @override
   _PopularMoviesPageState createState() => _PopularMoviesPageState();
 }
@@ -41,7 +38,7 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
                 },
                 itemCount: state.result.length,
               );
-            } else if (state is PopularMoviesError){
+            } else if (state is PopularMoviesError) {
               return Text(state.message);
             } else {
               return Text('Failed');

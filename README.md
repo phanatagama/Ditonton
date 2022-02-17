@@ -11,7 +11,7 @@
   <p align="center">
     Ditonton adalah aplikasi yang menampilkan informasi film serta serial tv
     <br />
-    <a href="https://github.com/phanatagama/Ditonton/releases/download/v.1.0.0-beta/app-release.apk">Download App</a>
+    <a href="https://github.com/phanatagama/Ditonton/releases/download/v.1.0.0-beta/app-debug.apk">Download App</a>
     ·
     <a href="https://github.com/phanatagama/Ditonton/issues/new">Report Bug</a>
     ·

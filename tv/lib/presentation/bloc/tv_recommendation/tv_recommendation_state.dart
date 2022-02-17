@@ -7,12 +7,14 @@ abstract class TvSeriesDetailRecommendationsState extends Equatable {
   List<Object> get props => [];
 }
 
-class TvSeriesDetailRecommendationsEmpty extends TvSeriesDetailRecommendationsState {}
+class TvSeriesDetailRecommendationsEmpty
+    extends TvSeriesDetailRecommendationsState {}
 
 class TvSeriesDetailRecommendationsLoading
     extends TvSeriesDetailRecommendationsState {}
 
-class TvSeriesDetailRecommendationsError extends TvSeriesDetailRecommendationsState {
+class TvSeriesDetailRecommendationsError
+    extends TvSeriesDetailRecommendationsState {
   final String message;
 
   const TvSeriesDetailRecommendationsError(this.message);

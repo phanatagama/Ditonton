@@ -14,10 +14,10 @@ class PopularTvSeriesCubit extends Cubit<PopularTvSeriesState> {
     final result = await _popularTvSeries.execute();
 
     result.fold(
-          (failure) {
+      (failure) {
         emit(PopularTvSeriesError(failure.message));
       },
-          (moviesData) {
+      (moviesData) {
         emit(PopularTvSeriesHasData(moviesData));
       },
     );

@@ -10,7 +10,8 @@ import 'package:tv/domain/usecases/search_tv.dart';
 part 'search_tv_event.dart';
 part 'search_tv_state.dart';
 
-class SearchTVSeriesBloc extends Bloc<SearchTVSeriesEvent, SearchTVSeriesState> {
+class SearchTVSeriesBloc
+    extends Bloc<SearchTVSeriesEvent, SearchTVSeriesState> {
   final SearchTVSeries _searchTVSeries;
 
   SearchTVSeriesBloc(this._searchTVSeries) : super(SearchTVSeriesInitial()) {
@@ -25,10 +26,10 @@ class SearchTVSeriesBloc extends Bloc<SearchTVSeriesEvent, SearchTVSeriesState> 
     final result = await _searchTVSeries.execute(query);
 
     result.fold(
-          (failure) {
+      (failure) {
         emit(SearchTVSeriesError(failure.message));
       },
-          (data) {
+      (data) {
         data.isEmpty
             ? emit(SearchTVSeriesEmpty())
             : emit(SearchTVSeriesHasData(data));

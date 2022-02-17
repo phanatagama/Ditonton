@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:tv/data/models/tv_model.dart';
 

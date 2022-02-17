@@ -8,8 +8,6 @@ import 'package:tv/tv.dart';
 
 import 'now_playing_tv_cubit_test.mocks.dart';
 
-
-
 @GenerateMocks([GetNowPlayingTVSeries])
 void main() {
   late NowPlayingTvSeriesCubit nowPlayingTvSeriesCubit;
@@ -30,7 +28,7 @@ void main() {
     id: 85552,
     name: 'Euphoria',
     overview:
-    'A group of high school students navigate love and friendships in a world of drugs, sex, trauma, and social media.',
+        'A group of high school students navigate love and friendships in a world of drugs, sex, trauma, and social media.',
     popularity: 5201.673,
     posterPath: '/jtnfNzqZwN4E32FGGxx1YZaBWWf.jpg',
     voteAverage: 8.4,

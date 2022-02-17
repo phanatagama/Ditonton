@@ -49,60 +49,58 @@ void main() {
 
   group('now playing widget test', () {
     testWidgets('Page should display center progress bar when loading',
-            (WidgetTester tester) async {
-          final expected = NowPlayingTvSeriesLoading();
+        (WidgetTester tester) async {
+      final expected = NowPlayingTvSeriesLoading();
 
-          when(mockNowPlayingTvSeriesCubit.state).thenReturn(expected);
-          when(mockNowPlayingTvSeriesCubit.stream)
-              .thenAnswer((_) => Stream.value(expected));
+      when(mockNowPlayingTvSeriesCubit.state).thenReturn(expected);
+      when(mockNowPlayingTvSeriesCubit.stream)
+          .thenAnswer((_) => Stream.value(expected));
 
-          final progressBarFinder = find.byType(CircularProgressIndicator);
-          final centerFinder = find.byType(Center);
+      final progressBarFinder = find.byType(CircularProgressIndicator);
+      final centerFinder = find.byType(Center);
 
-          await tester.pumpWidget(_makeTestableWidgetNowPlaying());
+      await tester.pumpWidget(_makeTestableWidgetNowPlaying());
 
-          expect(centerFinder, findsOneWidget);
-          expect(progressBarFinder, findsOneWidget);
-        });
-
+      expect(centerFinder, findsOneWidget);
+      expect(progressBarFinder, findsOneWidget);
+    });
   });
 
   group('popular widget test', () {
     testWidgets('Page should display center progress bar when loading',
-            (WidgetTester tester) async {
-          final expected = PopularTvSeriesLoading();
+        (WidgetTester tester) async {
+      final expected = PopularTvSeriesLoading();
 
-          when(mockPopularTvSeriesCubit.state).thenReturn(expected);
-          when(mockPopularTvSeriesCubit.stream)
-              .thenAnswer((_) => Stream.value(expected));
+      when(mockPopularTvSeriesCubit.state).thenReturn(expected);
+      when(mockPopularTvSeriesCubit.stream)
+          .thenAnswer((_) => Stream.value(expected));
 
-          final progressBarFinder = find.byType(CircularProgressIndicator);
-          final centerFinder = find.byType(Center);
+      final progressBarFinder = find.byType(CircularProgressIndicator);
+      final centerFinder = find.byType(Center);
 
-          await tester.pumpWidget(_makeTestableWidgetPopular());
+      await tester.pumpWidget(_makeTestableWidgetPopular());
 
-          expect(centerFinder, findsOneWidget);
-          expect(progressBarFinder, findsOneWidget);
-        });
-
+      expect(centerFinder, findsOneWidget);
+      expect(progressBarFinder, findsOneWidget);
+    });
   });
 
   group('top rated widget test', () {
     testWidgets('Page should display center progress bar when loading',
-            (WidgetTester tester) async {
-          final expected = TopRatedTvSeriesLoading();
+        (WidgetTester tester) async {
+      final expected = TopRatedTvSeriesLoading();
 
-          when(mockTopRatedTvSeriesCubit.state).thenReturn(expected);
-          when(mockTopRatedTvSeriesCubit.stream)
-              .thenAnswer((_) => Stream.value(expected));
+      when(mockTopRatedTvSeriesCubit.state).thenReturn(expected);
+      when(mockTopRatedTvSeriesCubit.stream)
+          .thenAnswer((_) => Stream.value(expected));
 
-          final progressBarFinder = find.byType(CircularProgressIndicator);
-          final centerFinder = find.byType(Center);
+      final progressBarFinder = find.byType(CircularProgressIndicator);
+      final centerFinder = find.byType(Center);
 
-          await tester.pumpWidget(_makeTestableWidgetTopRated());
+      await tester.pumpWidget(_makeTestableWidgetTopRated());
 
-          expect(centerFinder, findsOneWidget);
-          expect(progressBarFinder, findsOneWidget);
-        });
+      expect(centerFinder, findsOneWidget);
+      expect(progressBarFinder, findsOneWidget);
+    });
   });
 }

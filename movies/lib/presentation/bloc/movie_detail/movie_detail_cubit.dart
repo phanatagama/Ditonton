@@ -7,21 +7,19 @@ part 'movie_detail_state.dart';
 class MovieDetailCubit extends Cubit<MovieDetailState> {
   final GetMovieDetail _getMovieDetail;
 
-  MovieDetailCubit(this._getMovieDetail)
-      : super(MovieDetailEmpty());
+  MovieDetailCubit(this._getMovieDetail) : super(MovieDetailEmpty());
 
   Future<void> getMovieDetail(int id) async {
     emit(MovieDetailLoading());
     final result = await _getMovieDetail.execute(id);
 
     result.fold(
-          (failure) {
+      (failure) {
         emit(MovieDetailError(failure.message));
       },
-          (movieData) async {
+      (movieData) async {
         emit(MovieDetailHasData(movieData));
       },
     );
   }
-
 }

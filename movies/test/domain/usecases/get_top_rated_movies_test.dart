@@ -5,8 +5,6 @@ import 'package:movies/movies.dart';
 
 import '../../helpers/test_helper.mocks.dart';
 
-
-
 void main() {
   late GetTopRatedMovies usecase;
   late MockMovieRepository mockMovieRepository;

@@ -17,32 +17,30 @@ final locator = GetIt.instance;
 void init() {
   // provider
   locator.registerFactory(
-    () => MovieDetailCubit(locator()
+    () => MovieDetailCubit(locator()),
+  );
+  locator.registerFactory(() => TvSeriesDetailCubit(locator()));
+  locator.registerFactory(
+    () => NowPlayingMoviesCubit(
+      locator(),
     ),
   );
   locator.registerFactory(
-    () => TvSeriesDetailCubit(locator())
-  );
-  locator.registerFactory(
-    () => NowPlayingMoviesCubit(locator(),
+    () => MovieRecommendationsCubit(
+      locator(),
     ),
   );
   locator.registerFactory(
-        () => MovieRecommendationsCubit(locator(),
+    () => TvSeriesDetailRecommendationsCubit(
+      locator(),
     ),
   );
-  locator.registerFactory(
-        () => TvSeriesDetailRecommendationsCubit(locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => NowPlayingTvSeriesCubit(locator())
-  );
+  locator.registerFactory(() => NowPlayingTvSeriesCubit(locator()));
   locator.registerFactory(
     () => SearchMoviesBloc(locator()),
   );
   locator.registerFactory(
-        () => SearchTVSeriesBloc(locator()),
+    () => SearchTVSeriesBloc(locator()),
   );
   locator.registerFactory(
     () => PopularMoviesCubit(
@@ -50,13 +48,12 @@ void init() {
     ),
   );
   locator.registerFactory(
-    () => TopRatedMoviesCubit( locator(),
+    () => TopRatedMoviesCubit(
+      locator(),
     ),
   );
   locator.registerFactory(
-    () => WatchlistMoviesCubit(
-       locator(),locator(),locator(),locator()
-    ),
+    () => WatchlistMoviesCubit(locator(), locator(), locator(), locator()),
   );
   locator.registerFactory(
     () => PopularTvSeriesCubit(
@@ -64,11 +61,12 @@ void init() {
     ),
   );
   locator.registerFactory(
-    () => TopRatedTvSeriesCubit( locator(),
+    () => TopRatedTvSeriesCubit(
+      locator(),
     ),
   );
   locator.registerFactory(
-    () => WatchlistTvSeriesCubit(locator(),locator(),locator(),locator()),
+    () => WatchlistTvSeriesCubit(locator(), locator(), locator(), locator()),
   );
 
   // use case
@@ -121,8 +119,7 @@ void init() {
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
 
   // external
-  locator.registerLazySingleton(() =>
-  SSLPinning.client
+  locator.registerLazySingleton(() => SSLPinning.client
       // http.Client()
-  );
+      );
 }

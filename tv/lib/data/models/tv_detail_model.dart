@@ -1,4 +1,3 @@
-
 import 'package:core/data/models/movie/genre_model.dart';
 import 'package:core/data/models/tv/season_model.dart';
 import 'package:equatable/equatable.dart';

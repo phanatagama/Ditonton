@@ -42,14 +42,12 @@ class _HomeTVPageState extends State<HomeTVPage> {
             NowPlayingTVSeries(),
             _buildSubHeading(
               title: 'Popular',
-              onTap: () =>
-                  Navigator.pushNamed(context, POPULAR_TV_ROUTE),
+              onTap: () => Navigator.pushNamed(context, POPULAR_TV_ROUTE),
             ),
             PopularTVSeries(),
             _buildSubHeading(
               title: 'Top Rated',
-              onTap: () =>
-                  Navigator.pushNamed(context, TOP_RATED_TV_ROUTE),
+              onTap: () => Navigator.pushNamed(context, TOP_RATED_TV_ROUTE),
             ),
             TopRatedTVSeries(),
           ],
@@ -80,7 +78,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
   }
 }
 
-class TopRatedTVSeries extends StatelessWidget{
+class TopRatedTVSeries extends StatelessWidget {
   const TopRatedTVSeries({Key? key}) : super(key: key);
 
   @override
@@ -140,7 +138,6 @@ class NowPlayingTVSeries extends StatelessWidget {
       },
     );
   }
-
 }
 
 class TVSeriesList extends StatelessWidget {

@@ -4,7 +4,8 @@ import 'package:tv/tv.dart';
 
 part 'tv_recommendation_state.dart';
 
-class TvSeriesDetailRecommendationsCubit extends Cubit<TvSeriesDetailRecommendationsState> {
+class TvSeriesDetailRecommendationsCubit
+    extends Cubit<TvSeriesDetailRecommendationsState> {
   final GetTVSeriesRecommendations _getTvSeriesRecommendations;
 
   TvSeriesDetailRecommendationsCubit(this._getTvSeriesRecommendations)
@@ -15,10 +16,10 @@ class TvSeriesDetailRecommendationsCubit extends Cubit<TvSeriesDetailRecommendat
     final recommendations = await _getTvSeriesRecommendations.execute(id);
 
     recommendations.fold(
-          (failure) {
+      (failure) {
         emit(TvSeriesDetailRecommendationsError(failure.message));
       },
-          (moviesData) {
+      (moviesData) {
         emit(TvSeriesDetailRecommendationsHasData(moviesData));
       },
     );

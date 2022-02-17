@@ -30,16 +30,16 @@ void main() {
       originalLanguage: "en",
       originalName: "Blade Runner: Black Lotus",
       overview:
-      "Los Angeles 2032. A young woman wakes up with no memories, and possessing deadly skills. The only clues to her mystery are a locked data device and a tattoo of a black lotus. Putting together the pieces, she must hunt down the people responsible for her brutal and bloody past to find the truth of her lost identity.",
+          "Los Angeles 2032. A young woman wakes up with no memories, and possessing deadly skills. The only clues to her mystery are a locked data device and a tattoo of a black lotus. Putting together the pieces, she must hunt down the people responsible for her brutal and bloody past to find the truth of her lost identity.",
       popularity: 477.664,
       posterPath: "/zHQJkDZ4OjqJnp4vtphxOQ7GIh6.jpg",
       voteAverage: 7.6,
-      voteCount: 68
-  );
+      voteCount: 68);
   final tTvSeriesListRecommendations = <TVSeries>[testTVSeriesRecommendations];
 
   test('initial state should be empty', () {
-    expect(tvSeriesDetailRecommendationsCubit.state, TvSeriesDetailRecommendationsEmpty());
+    expect(tvSeriesDetailRecommendationsCubit.state,
+        TvSeriesDetailRecommendationsEmpty());
   });
 
   const tId = 1;

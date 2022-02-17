@@ -24,19 +24,19 @@ void main() {
   }
 
   testWidgets('Page should display center progress bar when loading',
-          (WidgetTester tester) async {
-        final expected = TopRatedTvSeriesLoading();
+      (WidgetTester tester) async {
+    final expected = TopRatedTvSeriesLoading();
 
-        when(mockTopRatedTvSeriesCubit.state).thenReturn(expected);
-        when(mockTopRatedTvSeriesCubit.stream)
-            .thenAnswer((_) => Stream.value(expected));
+    when(mockTopRatedTvSeriesCubit.state).thenReturn(expected);
+    when(mockTopRatedTvSeriesCubit.stream)
+        .thenAnswer((_) => Stream.value(expected));
 
-        final progressBarFinder = find.byType(CircularProgressIndicator);
-        final centerFinder = find.byType(Center);
+    final progressBarFinder = find.byType(CircularProgressIndicator);
+    final centerFinder = find.byType(Center);
 
-        await tester.pumpWidget(_makeTestableWidget(TopRatedTVSeriesPage()));
+    await tester.pumpWidget(_makeTestableWidget(TopRatedTVSeriesPage()));
 
-        expect(centerFinder, findsOneWidget);
-        expect(progressBarFinder, findsOneWidget);
-      });
+    expect(centerFinder, findsOneWidget);
+    expect(progressBarFinder, findsOneWidget);
+  });
 }

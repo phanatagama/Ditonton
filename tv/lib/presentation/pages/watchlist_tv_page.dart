@@ -1,4 +1,3 @@
-
 import 'package:core/styles/text_styles.dart';
 import 'package:core/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +6,6 @@ import 'package:tv/presentation/bloc/watchlist_tv/watchlist_tv_cubit.dart';
 import 'package:tv/presentation/widgets/tv_card_list.dart';
 
 class WatchlistTVSeriesPage extends StatefulWidget {
-
   @override
   _WatchlistTVSeriesPageState createState() => _WatchlistTVSeriesPageState();
 }

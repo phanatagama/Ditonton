@@ -15,10 +15,10 @@ class TopRatedMoviesCubit extends Cubit<TopRatedMoviesState> {
     final result = await _topRatedMovies.execute();
 
     result.fold(
-          (failure) {
+      (failure) {
         emit(TopRatedMoviesError(failure.message));
       },
-          (moviesData) {
+      (moviesData) {
         emit(TopRatedMoviesHasData(moviesData));
       },
     );

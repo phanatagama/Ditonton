@@ -14,7 +14,6 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MovieDetailPage extends StatefulWidget {
-
   final int id;
   MovieDetailPage({required this.id});
 
@@ -45,9 +44,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
           } else if (state is MovieDetailHasData) {
             final movie = state.result;
             return SafeArea(
-              child: DetailContent(
-                movie
-              ),
+              child: DetailContent(movie),
             );
           } else if (state is MovieDetailError) {
             return Text(state.message);
@@ -126,15 +123,15 @@ class DetailContent extends StatelessWidget {
                                           .message;
 
                                       if (message ==
-                                          watchlistAddSuccessMessage ||
+                                              watchlistAddSuccessMessage ||
                                           message ==
                                               watchlistRemoveSuccessMessage) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(message),
-                                            duration:
-                                            const Duration(milliseconds: 500),
+                                            duration: const Duration(
+                                                milliseconds: 500),
                                           ),
                                         );
                                       } else {
@@ -199,13 +196,12 @@ class DetailContent extends StatelessWidget {
                             BlocBuilder<MovieRecommendationsCubit,
                                 MovieRecommendationsState>(
                               builder: (context, state) {
-                                if (state
-                                is MovieRecommendationsLoading) {
+                                if (state is MovieRecommendationsLoading) {
                                   return const Center(
                                     child: CircularProgressIndicator(),
                                   );
                                 } else if (state
-                                is MovieRecommendationsHasData) {
+                                    is MovieRecommendationsHasData) {
                                   final recommendations = state.recommendations;
                                   return SizedBox(
                                     height: 150,
@@ -225,20 +221,20 @@ class DetailContent extends StatelessWidget {
                                             },
                                             child: ClipRRect(
                                               borderRadius:
-                                              const BorderRadius.all(
+                                                  const BorderRadius.all(
                                                 Radius.circular(8),
                                               ),
                                               child: CachedNetworkImage(
                                                 imageUrl:
-                                                'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                                                    'https://image.tmdb.org/t/p/w500${movie.posterPath}',
                                                 placeholder: (context, url) =>
-                                                const Center(
+                                                    const Center(
                                                   child:
-                                                  CircularProgressIndicator(),
+                                                      CircularProgressIndicator(),
                                                 ),
                                                 errorWidget:
                                                     (context, url, error) =>
-                                                const Icon(Icons.error),
+                                                        const Icon(Icons.error),
                                               ),
                                             ),
                                           ),
@@ -247,8 +243,7 @@ class DetailContent extends StatelessWidget {
                                       itemCount: recommendations.length,
                                     ),
                                   );
-                                } else if (state
-                                is MovieRecommendationsError) {
+                                } else if (state is MovieRecommendationsError) {
                                   return Text(state.message);
                                 } else {
                                   return const Text('Failed');

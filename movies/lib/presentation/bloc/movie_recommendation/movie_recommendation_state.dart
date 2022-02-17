@@ -9,8 +9,7 @@ abstract class MovieRecommendationsState extends Equatable {
 
 class MovieRecommendationsEmpty extends MovieRecommendationsState {}
 
-class MovieRecommendationsLoading
-    extends MovieRecommendationsState {}
+class MovieRecommendationsLoading extends MovieRecommendationsState {}
 
 class MovieRecommendationsError extends MovieRecommendationsState {
   final String message;
@@ -21,8 +20,7 @@ class MovieRecommendationsError extends MovieRecommendationsState {
   List<Object> get props => [message];
 }
 
-class MovieRecommendationsHasData
-    extends MovieRecommendationsState {
+class MovieRecommendationsHasData extends MovieRecommendationsState {
   final List<Movie> recommendations;
 
   const MovieRecommendationsHasData(this.recommendations);

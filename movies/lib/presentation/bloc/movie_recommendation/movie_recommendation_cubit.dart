@@ -5,8 +5,7 @@ import 'package:equatable/equatable.dart';
 
 part 'movie_recommendation_state.dart';
 
-class MovieRecommendationsCubit
-    extends Cubit<MovieRecommendationsState> {
+class MovieRecommendationsCubit extends Cubit<MovieRecommendationsState> {
   final GetMovieRecommendations _getMovieRecommendations;
 
   MovieRecommendationsCubit(this._getMovieRecommendations)
@@ -17,10 +16,10 @@ class MovieRecommendationsCubit
     final recommendations = await _getMovieRecommendations.execute(id);
 
     recommendations.fold(
-          (failure) {
+      (failure) {
         emit(MovieRecommendationsError(failure.message));
       },
-          (moviesData) {
+      (moviesData) {
         emit(MovieRecommendationsHasData(moviesData));
       },
     );

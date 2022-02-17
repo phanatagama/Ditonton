@@ -1,13 +1,11 @@
 import 'dart:convert';
 
-
 import 'package:core/utils/constants.dart';
 import 'package:core/utils/exception.dart';
 import 'package:http/http.dart' as http;
 import 'package:movies/data/models/movie_detail_model.dart';
 import 'package:movies/data/models/movie_model.dart';
 import 'package:movies/data/models/movie_response.dart';
-
 
 abstract class MovieRemoteDataSource {
   Future<List<MovieModel>> getNowPlayingMovies();

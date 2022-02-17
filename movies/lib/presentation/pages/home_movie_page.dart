@@ -12,8 +12,6 @@ import 'package:flutter/widgets.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
-
 class HomeMoviePage extends StatefulWidget {
   @override
   _HomeMoviePageState createState() => _HomeMoviePageState();
@@ -57,8 +55,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             ),
             _buildSubHeading(
               title: 'Popular',
-              onTap: () =>
-                  Navigator.pushNamed(context, POPULAR_MOVIES_ROUTE),
+              onTap: () => Navigator.pushNamed(context, POPULAR_MOVIES_ROUTE),
             ),
             BlocBuilder<PopularMoviesCubit, PopularMoviesState>(
               builder: (context, state) {
@@ -75,8 +72,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             ),
             _buildSubHeading(
               title: 'Top Rated',
-              onTap: () =>
-                  Navigator.pushNamed(context, TOP_RATED_MOVIES_ROUTE),
+              onTap: () => Navigator.pushNamed(context, TOP_RATED_MOVIES_ROUTE),
             ),
             BlocBuilder<TopRatedMoviesCubit, TopRatedMoviesState>(
               builder: (context, state) {

@@ -2,7 +2,6 @@ import 'package:core/data/models/movie/genre_model.dart';
 import 'package:core/data/models/tv/season_model.dart';
 import 'package:tv/tv.dart';
 
-
 final testTVSeriesModel = TVSeriesModel(
     backdropPath: "/phwgPLUIcv3sbI1xmkiurThR13Q.jpg",
     firstAirDate: "2021-11-14",

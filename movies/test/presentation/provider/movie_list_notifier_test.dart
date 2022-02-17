@@ -9,7 +9,6 @@ import 'package:movies/presentation/provider/movie_list_notifier.dart';
 
 import 'movie_list_notifier_test.mocks.dart';
 
-
 @GenerateMocks([GetNowPlayingMovies, GetPopularMovies, GetTopRatedMovies])
 void main() {
   late MovieListNotifier provider;

@@ -8,7 +8,6 @@ import 'package:movies/movies.dart';
 
 import 'top_rated_movies_cubit_test.mocks.dart';
 
-
 @GenerateMocks([GetTopRatedMovies])
 void main() {
   late TopRatedMoviesCubit topRatedMoviesCubit;
@@ -30,7 +29,7 @@ void main() {
     id: 557,
     originalTitle: 'Spider-Man',
     overview:
-    'After being bitten by a genetically altered spider, nerdy high school student Peter Parker is endowed with amazing powers to become the Amazing superhero known as Spider-Man.',
+        'After being bitten by a genetically altered spider, nerdy high school student Peter Parker is endowed with amazing powers to become the Amazing superhero known as Spider-Man.',
     popularity: 60.441,
     posterPath: '/rweIrveL43TaxUN0akQEaAXL6x0.jpg',
     releaseDate: '2002-05-01',

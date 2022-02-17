@@ -13,18 +13,19 @@ part 'watchlist_tv_state.dart';
 class WatchlistTvSeriesCubit extends Cubit<WatchlistTvSeriesState> {
   final GetWatchlistTVSeries _getWatchlistTvSeries;
 
-  WatchlistTvSeriesCubit(this._getWatchlistTvSeries, this.getWatchListStatus, this.saveWatchlist, this.removeWatchlist)
-       : super(WatchlistTvSeriesEmpty());
+  WatchlistTvSeriesCubit(this._getWatchlistTvSeries, this.getWatchListStatus,
+      this.saveWatchlist, this.removeWatchlist)
+      : super(WatchlistTvSeriesEmpty());
 
   Future<void> getWatchlistTvSeries() async {
     emit(WatchlistTvSeriesLoading());
     final result = await _getWatchlistTvSeries.execute();
 
     result.fold(
-          (failure) {
+      (failure) {
         emit(WatchlistTvSeriesError(failure.message));
       },
-          (moviesData) {
+      (moviesData) {
         emit(WatchlistTvSeriesHasData(moviesData));
       },
     );
@@ -48,11 +49,11 @@ class WatchlistTvSeriesCubit extends Cubit<WatchlistTvSeriesState> {
     final result = await saveWatchlist.execute(tvSeries);
 
     await result.fold(
-          (failure) async {
+      (failure) async {
         emit(TvSeriesWatchlistState(false));
         message = failure.message;
       },
-          (successMessage) async {
+      (successMessage) async {
         emit(TvSeriesWatchlistState(true));
         message = successMessage;
       },
@@ -65,11 +66,11 @@ class WatchlistTvSeriesCubit extends Cubit<WatchlistTvSeriesState> {
     final result = await removeWatchlist.execute(tvSeries);
 
     await result.fold(
-          (failure) async {
+      (failure) async {
         emit(TvSeriesWatchlistState(true));
         message = failure.message;
       },
-          (successMessage) async {
+      (successMessage) async {
         emit(TvSeriesWatchlistState(false));
         message = successMessage;
       },

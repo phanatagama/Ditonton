@@ -10,7 +10,6 @@ import 'package:movies/presentation/bloc/movie_recommendation/movie_recommendati
 
 import 'movie_recommendation_cubit_test.mocks.dart';
 
-
 @GenerateMocks([GetMovieRecommendations])
 void main() {
   late MovieRecommendationsCubit movieRecommendationsCubit;
@@ -19,7 +18,8 @@ void main() {
 
   setUp(() {
     mockGetMovieRecommendations = MockGetMovieRecommendations();
-    movieRecommendationsCubit = MovieRecommendationsCubit(mockGetMovieRecommendations);
+    movieRecommendationsCubit =
+        MovieRecommendationsCubit(mockGetMovieRecommendations);
   });
 
   test('initial state should be empty', () {

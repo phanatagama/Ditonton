@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:tv/presentation/bloc/popular_tv/popular_tv_cubit.dart';
 import 'package:tv/presentation/widgets/tv_card_list.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PopularTVSeriesPage extends StatefulWidget {
-
   @override
   _PopularTVSeriesPageState createState() => _PopularTVSeriesPageState();
 }
@@ -39,7 +37,7 @@ class _PopularTVSeriesPageState extends State<PopularTVSeriesPage> {
                 },
                 itemCount: state.result.length,
               );
-            } else if (state is PopularTvSeriesError){
+            } else if (state is PopularTvSeriesError) {
               return Text(state.message);
             } else {
               return Text('Failed');

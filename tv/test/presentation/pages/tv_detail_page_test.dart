@@ -9,7 +9,7 @@ import 'tv_detail_page_test.mocks.dart';
 @GenerateMocks([TvSeriesDetailRecommendationsCubit])
 void main() {
   late MockTvSeriesDetailRecommendationsCubit
-  mockTvSeriesDetailRecommendationsCubit;
+      mockTvSeriesDetailRecommendationsCubit;
 
   setUp(() {
     mockTvSeriesDetailRecommendationsCubit =
@@ -27,20 +27,20 @@ void main() {
 
   group('tv series recommendations widget test', () {
     testWidgets('Page should display center progress bar when loading',
-            (WidgetTester tester) async {
-          final expected = TvSeriesDetailRecommendationsLoading();
+        (WidgetTester tester) async {
+      final expected = TvSeriesDetailRecommendationsLoading();
 
-          when(mockTvSeriesDetailRecommendationsCubit.state).thenReturn(expected);
-          when(mockTvSeriesDetailRecommendationsCubit.stream)
-              .thenAnswer((_) => Stream.value(expected));
+      when(mockTvSeriesDetailRecommendationsCubit.state).thenReturn(expected);
+      when(mockTvSeriesDetailRecommendationsCubit.stream)
+          .thenAnswer((_) => Stream.value(expected));
 
-          final progressBarFinder = find.byType(CircularProgressIndicator);
-          final centerFinder = find.byType(Center);
+      final progressBarFinder = find.byType(CircularProgressIndicator);
+      final centerFinder = find.byType(Center);
 
-          await tester.pumpWidget(_makeTestableWidgetDetailRecommendations());
+      await tester.pumpWidget(_makeTestableWidgetDetailRecommendations());
 
-          expect(centerFinder, findsOneWidget);
-          expect(progressBarFinder, findsOneWidget);
-        });
+      expect(centerFinder, findsOneWidget);
+      expect(progressBarFinder, findsOneWidget);
+    });
   });
 }

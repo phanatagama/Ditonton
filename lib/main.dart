@@ -38,7 +38,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => di.locator<MovieRecommendationsCubit>(),
         ),
-
         BlocProvider(
           create: (_) => di.locator<TopRatedMoviesCubit>(),
         ),
@@ -210,7 +209,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: _activeDrawerItem == "Movie" ? HomeMoviePage() : HomeTVPage() ,
+      body: _activeDrawerItem == "Movie" ? HomeMoviePage() : HomeTVPage(),
     );
   }
 }

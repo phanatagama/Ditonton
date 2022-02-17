@@ -9,7 +9,6 @@ import 'package:movies/presentation/provider/popular_movies_notifier.dart';
 
 import 'popular_movies_notifier_test.mocks.dart';
 
-
 @GenerateMocks([GetPopularMovies])
 void main() {
   late MockGetPopularMovies mockGetPopularMovies;

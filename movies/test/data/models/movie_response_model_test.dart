@@ -5,8 +5,6 @@ import 'package:movies/movies.dart';
 
 import '../../json_reader.dart';
 
-
-
 void main() {
   final tMovieModel = MovieModel(
     adult: false,

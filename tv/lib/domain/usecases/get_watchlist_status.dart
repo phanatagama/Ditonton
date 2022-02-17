@@ -1,4 +1,3 @@
-
 import 'package:tv/domain/repositories/tv_repository.dart';
 
 class GetWatchListStatusTVSeries {

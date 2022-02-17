@@ -13,7 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TVSeriesDetailPage extends StatefulWidget {
-
   TVSeriesDetailPage({Key? key, required this.id}) : super(key: key);
 
   final int id;
@@ -122,15 +121,15 @@ class DetailContent extends StatelessWidget {
                                           .message;
 
                                       if (message ==
-                                          watchlistAddSuccessMessage ||
+                                              watchlistAddSuccessMessage ||
                                           message ==
                                               watchlistRemoveSuccessMessage) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(message),
-                                            duration:
-                                            const Duration(milliseconds: 500),
+                                            duration: const Duration(
+                                                milliseconds: 500),
                                           ),
                                         );
                                       } else {
@@ -358,7 +357,7 @@ class DetailContent extends StatelessWidget {
   }
 }
 
-class TVSeriesRecommendation extends StatelessWidget{
+class TVSeriesRecommendation extends StatelessWidget {
   const TVSeriesRecommendation({Key? key}) : super(key: key);
 
   @override
@@ -366,13 +365,11 @@ class TVSeriesRecommendation extends StatelessWidget{
     return BlocBuilder<TvSeriesDetailRecommendationsCubit,
         TvSeriesDetailRecommendationsState>(
       builder: (context, state) {
-        if (state
-        is TvSeriesDetailRecommendationsLoading) {
+        if (state is TvSeriesDetailRecommendationsLoading) {
           return const Center(
             child: CircularProgressIndicator(),
           );
-        } else if (state
-        is TvSeriesDetailRecommendationsHasData) {
+        } else if (state is TvSeriesDetailRecommendationsHasData) {
           final recommendations = state.recommendations;
           return SizedBox(
             height: 150,
@@ -391,21 +388,17 @@ class TVSeriesRecommendation extends StatelessWidget{
                       );
                     },
                     child: ClipRRect(
-                      borderRadius:
-                      const BorderRadius.all(
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(8),
                       ),
                       child: CachedNetworkImage(
                         imageUrl:
-                        'https://image.tmdb.org/t/p/w500${tv.posterPath}',
-                        placeholder: (context, url) =>
-                        const Center(
-                          child:
-                          CircularProgressIndicator(),
+                            'https://image.tmdb.org/t/p/w500${tv.posterPath}',
+                        placeholder: (context, url) => const Center(
+                          child: CircularProgressIndicator(),
                         ),
-                        errorWidget:
-                            (context, url, error) =>
-                        const Icon(Icons.error),
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
                       ),
                     ),
                   ),
@@ -414,8 +407,7 @@ class TVSeriesRecommendation extends StatelessWidget{
               itemCount: recommendations.length,
             ),
           );
-        } else if (state
-        is TvSeriesDetailRecommendationsError) {
+        } else if (state is TvSeriesDetailRecommendationsError) {
           return Text(state.message);
         } else {
           return const Text('Something Went Wrong');
@@ -423,5 +415,4 @@ class TVSeriesRecommendation extends StatelessWidget{
       },
     );
   }
-
 }

@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tv/presentation/bloc/top_rated_tv/top_rated_tv_cubit.dart';
 import 'package:tv/presentation/widgets/tv_card_list.dart';
 
 class TopRatedTVSeriesPage extends StatefulWidget {
-
   @override
   _TopRatedTVSeriesPageState createState() => _TopRatedTVSeriesPageState();
 }
@@ -39,10 +37,9 @@ class _TopRatedTVSeriesPageState extends State<TopRatedTVSeriesPage> {
                 },
                 itemCount: state.result.length,
               );
-            } else if ( state is TopRatedTvSeriesError){
+            } else if (state is TopRatedTvSeriesError) {
               return Text(state.message);
-            }
-            else {
+            } else {
               return const Text('Failed');
             }
           },
