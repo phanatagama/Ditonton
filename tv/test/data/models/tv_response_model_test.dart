@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:tv/data/models/tv_response.dart';
+import 'package:tv/tv.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../dummy_data/dummy_objects.dart';

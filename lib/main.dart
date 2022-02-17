@@ -138,6 +138,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String _activeDrawerItem = "Movie";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -209,15 +210,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: _buildBody(context, _activeDrawerItem) ,
+      body: _activeDrawerItem == "Movie" ? HomeMoviePage() : HomeTVPage() ,
     );
-  }
-  Widget _buildBody(BuildContext context, String selectedDrawerItem) {
-    if (selectedDrawerItem == "Movie") {
-      return HomeMoviePage();
-    } else if (selectedDrawerItem == "TVSeries") {
-      return HomeTVPage();
-    }
-    return Container();
   }
 }

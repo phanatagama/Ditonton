@@ -4,7 +4,6 @@ import 'package:mockito/mockito.dart';
 import 'package:tv/tv.dart';
 import '../../helpers/test_helper.mocks.dart';
 
-
 void main() {
   late GetWatchListStatusTVSeries usecase;
   late MockTVSeriesRepository mockTVSeriesRepository;

@@ -4,6 +4,7 @@ import 'package:core/utils/state_enum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:tv/presentation/provider/top_rated_tv_notifier.dart';
 import 'package:tv/tv.dart';
 
 import '../../dummy_data/dummy_objects.dart';

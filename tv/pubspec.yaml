@@ -8,7 +8,6 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  flutter_rating_bar: ^4.0.0
   flutter:
     sdk: flutter
   core:
@@ -19,6 +18,7 @@ dev_dependencies:
     sdk: flutter
   mockito: ^5.0.8
   build_runner: ^2.0.4
+  bloc_test: ^9.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

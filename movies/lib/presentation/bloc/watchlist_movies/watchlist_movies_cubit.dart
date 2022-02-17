@@ -11,6 +11,11 @@ import 'package:movies/domain/usecases/save_watchlist.dart';
 part 'watchlist_movies_state.dart';
 
 class WatchlistMoviesCubit extends Cubit<WatchlistMoviesState> {
+  String message = '';
+
+  final GetWatchListStatus getWatchListStatus;
+  final SaveWatchlist saveWatchlist;
+  final RemoveWatchlist removeWatchlist;
   final GetWatchlistMovies _getWatchlistMovies;
 
   WatchlistMoviesCubit(this._getWatchlistMovies, this.getWatchListStatus, this.saveWatchlist, this.removeWatchlist) : super(WatchlistMoviesEmpty());
@@ -28,12 +33,6 @@ class WatchlistMoviesCubit extends Cubit<WatchlistMoviesState> {
       },
     );
   }
-
-  String message = '';
-
-  final GetWatchListStatus getWatchListStatus;
-  final SaveWatchlist saveWatchlist;
-  final RemoveWatchlist removeWatchlist;
 
   Future<void> loadWatchlistStatus(int id) async {
     final result = await getWatchListStatus.execute(id);

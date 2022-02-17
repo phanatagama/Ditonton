@@ -39,55 +39,19 @@ class _HomeTVPageState extends State<HomeTVPage> {
               'Now Playing',
               style: kHeading6,
             ),
-            BlocBuilder<NowPlayingTvSeriesCubit, NowPlayingTvSeriesState>(
-              builder: (context, state) {
-                if (state is NowPlayingTvSeriesLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                } else if (state is NowPlayingTvSeriesHasData) {
-                  return TVSeriesList(state.result);
-                } else {
-                  return const Text('Failed');
-                }
-              },
-            ),
+            NowPlayingTVSeries(),
             _buildSubHeading(
               title: 'Popular',
               onTap: () =>
                   Navigator.pushNamed(context, POPULAR_TV_ROUTE),
             ),
-            BlocBuilder<PopularTvSeriesCubit, PopularTvSeriesState>(
-              builder: (context, state) {
-                if (state is PopularTvSeriesLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                } else if (state is PopularTvSeriesHasData) {
-                  return TVSeriesList(state.result);
-                } else {
-                  return const Text('Failed');
-                }
-              },
-            ),
+            PopularTVSeries(),
             _buildSubHeading(
               title: 'Top Rated',
               onTap: () =>
                   Navigator.pushNamed(context, TOP_RATED_TV_ROUTE),
             ),
-            BlocBuilder<PopularTvSeriesCubit, PopularTvSeriesState>(
-              builder: (context, state) {
-                if (state is PopularTvSeriesLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                } else if (state is PopularTvSeriesHasData) {
-                  return TVSeriesList(state.result);
-                } else {
-                  return const Text('Failed');
-                }
-              },
-            ),
+            TopRatedTVSeries(),
           ],
         ),
       ),
@@ -114,6 +78,69 @@ class _HomeTVPageState extends State<HomeTVPage> {
       ],
     );
   }
+}
+
+class TopRatedTVSeries extends StatelessWidget{
+  const TopRatedTVSeries({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<TopRatedTvSeriesCubit, TopRatedTvSeriesState>(
+      builder: (context, state) {
+        if (state is TopRatedTvSeriesLoading) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (state is TopRatedTvSeriesHasData) {
+          return TVSeriesList(state.result);
+        } else {
+          return const Text('Failed');
+        }
+      },
+    );
+  }
+}
+
+class PopularTVSeries extends StatelessWidget {
+  const PopularTVSeries({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<PopularTvSeriesCubit, PopularTvSeriesState>(
+      builder: (context, state) {
+        if (state is PopularTvSeriesLoading) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (state is PopularTvSeriesHasData) {
+          return TVSeriesList(state.result);
+        } else {
+          return const Text('Failed');
+        }
+      },
+    );
+  }
+}
+
+class NowPlayingTVSeries extends StatelessWidget {
+  const NowPlayingTVSeries({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<NowPlayingTvSeriesCubit, NowPlayingTvSeriesState>(
+      builder: (context, state) {
+        if (state is NowPlayingTvSeriesLoading) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (state is NowPlayingTvSeriesHasData) {
+          return TVSeriesList(state.result);
+        } else {
+          return const Text('Failed');
+        }
+      },
+    );
+  }
+
 }
 
 class TVSeriesList extends StatelessWidget {

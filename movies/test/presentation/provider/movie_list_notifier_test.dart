@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:movies/movies.dart';
+import 'package:movies/presentation/provider/movie_list_notifier.dart';
 
 import 'movie_list_notifier_test.mocks.dart';
 
