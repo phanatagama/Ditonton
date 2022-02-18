@@ -52,9 +52,9 @@ jobs:
           path: build/app/outputs/apk/release/app-release.apk
 
       - name: Create a Release in GitHub
-          uses: ncipollo/release-action@v1
-          with:
-            artifacts: "build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab"
-            token: ${{ secrets.GH_TOKEN }}
-            tag: ${{ steps.version.outputs.content }}
-            commit: ${{ github.sha }}
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab"
+          token: ${{ secrets.GH_TOKEN }}
+          tag: ${{ steps.version.outputs.content }}
+          commit: ${{ github.sha }}
