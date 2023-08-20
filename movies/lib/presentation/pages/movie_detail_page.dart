@@ -10,7 +10,6 @@ import 'package:movies/presentation/bloc/watchlist_movies/watchlist_movies_cubit
 import '../../domain/entities/movie_detail.dart';
 import 'package:core/utils/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MovieDetailPage extends StatefulWidget {

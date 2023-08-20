@@ -6,9 +6,7 @@ import 'package:movies/presentation/bloc/popular_movies/popular_movies_cubit.dar
 import 'package:movies/presentation/bloc/top_rated_movies/top_rated_movies_cubit.dart';
 import '../../domain/entities/movie.dart';
 import 'package:core/utils/routes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 

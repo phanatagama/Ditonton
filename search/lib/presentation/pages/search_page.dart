@@ -8,7 +8,7 @@ import 'package:search/presentation/bloc/search_tv_bloc.dart';
 import 'package:tv/presentation/widgets/tv_card_list.dart';
 
 class SearchPage extends StatelessWidget {
-  SearchPage({
+  const SearchPage({
     Key? key,
     this.activeDrawerItem = "Movie",
   }) : super(key: key);
@@ -23,13 +23,15 @@ class SearchPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: activeDrawerItem == "Movie" ? MovieSearch() : TVSeriesSearch(),
+        child: activeDrawerItem == "Movie" ? const MovieSearch() : const TVSeriesSearch(),
       ),
     );
   }
 }
 
 class MovieSearch extends StatelessWidget {
+  const MovieSearch({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -79,6 +81,8 @@ class MovieSearch extends StatelessWidget {
 }
 
 class TVSeriesSearch extends StatelessWidget {
+  const TVSeriesSearch({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -86,14 +90,14 @@ class TVSeriesSearch extends StatelessWidget {
         onChanged: (query) {
           context.read<SearchTVSeriesBloc>().add(OnQueryTVSeriesChange(query));
         },
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           hintText: 'Search title',
           prefixIcon: Icon(Icons.search),
           border: OutlineInputBorder(),
         ),
         textInputAction: TextInputAction.search,
       ),
-      SizedBox(height: 16),
+      const SizedBox(height: 16),
       Text(
         'Search Result',
         style: kHeading6,
@@ -101,7 +105,7 @@ class TVSeriesSearch extends StatelessWidget {
       BlocBuilder<SearchTVSeriesBloc, SearchTVSeriesState>(
         builder: (context, state) {
           if (state is SearchTVSeriesLoading) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else if (state is SearchTVSeriesHasData) {

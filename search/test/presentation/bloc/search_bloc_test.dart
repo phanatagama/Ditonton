@@ -1,13 +1,11 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:core/utils/failure.dart';
+import 'package:core/core.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:movies/movies.dart';
-import 'package:search/domain/usecases/search_movies.dart';
-import 'package:search/presentation/bloc/search_movie_bloc.dart';
-
+import 'package:search/search.dart';
 
 import 'search_bloc_test.mocks.dart';
 
@@ -28,7 +26,7 @@ void main() {
   final tMovieModel = Movie(
     adult: false,
     backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
-    genreIds: [14, 28],
+    genreIds: const [14, 28],
     id: 557,
     originalTitle: 'Spider-Man',
     overview:
@@ -42,7 +40,7 @@ void main() {
     voteCount: 13507,
   );
   final tMovieList = <Movie>[tMovieModel];
-  final tQuery = 'spiderman';
+  const tQuery = 'spiderman';
 
   blocTest<SearchMoviesBloc, SearchMoviesState>(
     'Should emit [Loading, HasData] when data is gotten successfully',
@@ -51,7 +49,7 @@ void main() {
           .thenAnswer((_) async => Right(tMovieList));
       return searchBloc;
     },
-    act: (bloc) => bloc.add(OnQueryChanged(tQuery)),
+    act: (bloc) => bloc.add(const OnQueryChanged(tQuery)),
     wait: const Duration(milliseconds: 500),
     expect: () => [
       SearchMoviesLoading(),
@@ -69,11 +67,11 @@ void main() {
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       return searchBloc;
     },
-    act: (bloc) => bloc.add(OnQueryChanged(tQuery)),
+    act: (bloc) => bloc.add(const OnQueryChanged(tQuery)),
     wait: const Duration(milliseconds: 500),
     expect: () => [
       SearchMoviesLoading(),
-      SearchMoviesError('Server Failure'),
+      const SearchMoviesError('Server Failure'),
     ],
     verify: (bloc) {
       verify(mockSearchMovies.execute(tQuery));

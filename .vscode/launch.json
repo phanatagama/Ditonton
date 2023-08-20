@@ -42,6 +42,26 @@
             "flutterMode": "release"
         },
         {
+            "name": "search",
+            "cwd": "search",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "search (profile mode)",
+            "cwd": "search",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "search (release mode)",
+            "cwd": "search",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
             "name": "core",
             "cwd": "core",
             "request": "launch",

@@ -4,7 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:movies/movies.dart';
 import 'package:search/domain/usecases/search_movies.dart';
 
-import '../../../../movies/test/helpers/test_helper.mocks.dart';
+import '../../helper/test_helper.mocks.dart';
 
 void main() {
   late SearchMovies usecase;
@@ -16,7 +16,7 @@ void main() {
   });
 
   final tMovies = <Movie>[];
-  final tQuery = 'Spiderman';
+  const tQuery = 'Spiderman';
 
   test('should get list of movies from the repository', () async {
     // arrange
