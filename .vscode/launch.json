@@ -1,0 +1,105 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "a199-flutter-expert-project",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "a199-flutter-expert-project (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "a199-flutter-expert-project (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "about",
+            "cwd": "about",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "about (profile mode)",
+            "cwd": "about",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "about (release mode)",
+            "cwd": "about",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "core",
+            "cwd": "core",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "core (profile mode)",
+            "cwd": "core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "core (release mode)",
+            "cwd": "core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "movies",
+            "cwd": "movies",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "movies (profile mode)",
+            "cwd": "movies",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "movies (release mode)",
+            "cwd": "movies",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "tv",
+            "cwd": "tv",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "tv (profile mode)",
+            "cwd": "tv",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "tv (release mode)",
+            "cwd": "tv",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
