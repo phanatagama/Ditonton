@@ -1,9 +1,6 @@
 import 'package:core/core.dart';
-import 'package:core/data/datasources/db/database_helper.dart';
-import 'package:core/presentation/bloc/search_movie_bloc.dart';
-import 'package:core/presentation/bloc/search_tv_bloc.dart';
-
 import 'package:movies/movies.dart';
+import 'package:search/search.dart';
 import 'package:tv/tv.dart';
 import 'package:movies/domain/usecases/remove_watchlist.dart' as rwm;
 import 'package:movies/domain/usecases/save_watchlist.dart' as swm;

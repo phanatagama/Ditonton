@@ -1,12 +1,8 @@
 import 'package:about/about.dart';
 import 'package:core/core.dart';
-import 'package:core/presentation/bloc/search_movie_bloc.dart';
-import 'package:core/presentation/bloc/search_tv_bloc.dart';
-
-import 'package:core/presentation/pages/search_page.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'package:movies/movies.dart';
+import 'package:search/search.dart';
 import 'package:tv/tv.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
