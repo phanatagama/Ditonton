@@ -40,6 +40,8 @@ dependencies:
     path: tv
   movies:
     path: movies
+  search:
+    path: search
 
 
 dev_dependencies:
