@@ -34,7 +34,7 @@ Ditonton adalah aplikasi mobile yang menggunakan Flutter sebagai framework. Data
 ## 🛠️ Tech Stack Used
 | Dart      | Flutter      |Firebase      | Android Studio |
 |------------|-------------|-------------|-------------|
-| <img src="https://avatars.githubusercontent.com/u/1609975?s=280&v=4" width="150"> | <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_500,q_auto:good,w_500/v1/gcs/platform-data-dsc/events/1_ilC2Aqp5sZd1wi0CopD1Hw_zT8WoJh.png" width="150"> | <img src="https://www.gstatic.com/devrel-devsite/prod/v84e6f6a61298bbae5bb110c196e834c7f21fe3fb34e722925433ddb936d280c9/firebase/images/touchicon-180.png" width="150"> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Android_Studio_Icon_%282014-2019%29.svg/1200px-Android_Studio_Icon_%282014-2019%29.svg.png" width="150"> |
+| <img src="https://avatars.githubusercontent.com/u/1609975?s=280&v=4" width="150"> | <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_500,q_auto:good,w_500/v1/gcs/platform-data-dsc/events/1_ilC2Aqp5sZd1wi0CopD1Hw_zT8WoJh.png" width="150"> | <img src="https://miro.medium.com/v2/resize:fit:300/1*R4c8lHBHuH5qyqOtZb3h-w.png" width="150"> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Android_Studio_Icon_%282014-2019%29.svg/1200px-Android_Studio_Icon_%282014-2019%29.svg.png" width="150"> |
 
 Project ini telah terintegrasi dengan Firebase Analytics dan Firebase Crashlytics
 <!-- ### Extra Library -->
@@ -63,16 +63,12 @@ Membangun project dengan modular adalah hal baru bagi saya, di beberapa bagian s
 <!-- - [Cara Mendapatkan Barang Gratis Dari Internet - Blog Orang IT (helmykediri.com)](https://bit.ly/3FuCeVn) -->
 <!-- - [Barang Gratis Bisa Kamu Dapatkan di 6 Situs Ini Lho! (lifepal.co.id)](https://lifepal.co.id/media/doyan-berburu-barang-gratisan-cek-6-situs-nih/) -->
 
-<!-- ## 👁️ Preview/Screenshots -->
+ ## 👁️ Preview/Screenshots 
 
-<!-- - More Application Design in [Figma](https://www.figma.com/file/eISf5jqPckik2Js0NIm7TX/Flarax-App-Prototype?node-id=0%3A1) -->
+| ![home-page](https://github.com/phanatagama/Ditonton/assets/48324618/dc7a644d-e93a-4705-afe1-a6651d4d4498) | ![search-page](https://github.com/phanatagama/Ditonton/assets/48324618/2de1249b-2dc9-456a-b9ca-2cafd08d59ef)  | ![detail-movie-tv](https://github.com/phanatagama/Ditonton/assets/48324618/c87a9543-61f7-4e28-ab53-859582a07e45) | ![popular-movie-tv](https://github.com/phanatagama/Ditonton/assets/48324618/bb5cb0d5-e983-4997-a42a-b8592ab3d8bc) |
+| :--: | :--: | :--: | :--: |
+| **Home Page** |  **Search Page** | **Detail Movie/TV** | **Popular Movie/TV**
 
-<!-- | ![landing-page](https://user-images.githubusercontent.com/48324618/145372808-ae5dc7a8-f310-4643-84ed-b678a8aeeff1.jpg) **Landing Page** | ![login-page](https://user-images.githubusercontent.com/48324618/145372649-d459f07a-ba18-4cd0-aee1-fe91524abce5.jpg) **Login Page** | ![register-pagge](https://user-images.githubusercontent.com/48324618/145372937-6fddfba7-4abd-40fa-aa01-c01d349ad1d8.jpg) **Register Page** | ![usr-profile](https://user-images.githubusercontent.com/48324618/145373431-ebd4e049-9558-4fd7-8e0d-80f0b83b02e3.jpg) **User Profile** | -->
-<!-- | :--: | :--: | :--: | :--: | -->
-<!-- | ![home-page](https://user-images.githubusercontent.com/48324618/145373302-0a966fd3-e787-41c7-8c18-fc1e9ed79588.jpg) **Home Page** | ![detail-product](https://user-images.githubusercontent.com/48324618/145373659-0c01acd8-f2b8-4f9f-a2b3-320117b61593.jpg) **Detail Product** | ![product-page](https://user-images.githubusercontent.com/48324618/145373555-45e28331-c41d-47f1-96a5-74cd2d6d3728.jpg) **Product Page** | ![edit-product](https://user-images.githubusercontent.com/48324618/145373915-5c340a34-9e18-44a8-b81a-cc63882a313a.jpg) **Add/Edit Product** | -->
-<!-- |   -->
-
-<!-- ## License -->
 <!-- This project is licensed under the GNU GPLv3. -->
 
 <!-- ## Contributors ✨ -->
@@ -95,4 +91,4 @@ Membangun project dengan modular adalah hal baru bagi saya, di beberapa bagian s
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
+<!-- ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg) -->
